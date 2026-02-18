@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "alwaysStrict": true,
+   
+    "target": "ES2020",
+    "module": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    
+    "outDir": "./src/scripts/dist",
+    "rootDir": "./src/scripts",
+    
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    
+    "removeComments": true
+  },
+  "include": ["src/scripts/*.ts"]
+}

@@ -1,0 +1,39 @@
+{
+	"manifest_version": 3,
+  
+	"name": "FanTweaker",
+	"version": "1.0.1",
+	"description": "Tweak your experience of wikis on Fandom.com and make it truly yours. Enhance readability, change colors and spacing, remove the header, rail, sidebar and more.",
+	"icons": {
+		"48": "icons/icon48.png",
+		"64": "icons/icon64.png",
+		"96": "icons/icon96.png",
+		"128": "icons/icon128.png"
+	},
+  
+	"action": {
+		"default_title": "FanTweaker",
+		"default_popup": "index.html"
+	},
+  
+	"content_scripts": [{
+    "matches": [ "https://*.fandom.com/*" ], 
+    "js": [ "scripts/dist/content.js" ]
+	}],
+  
+	"permissions": [
+		"storage",
+		"tabs"
+	],
+  
+	"host_permissions": [
+		"https://fandom.com/*",
+		"https://*.fandom.com/*"
+	],
+
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "fantweaker@purxyl"
+		}
+	}
+}

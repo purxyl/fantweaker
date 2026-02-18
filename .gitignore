@@ -1,0 +1,17 @@
+# nodejs modules
+node_modules/
+
+# logs
+*.log
+
+# dist and build
+dist/
+build/
+
+# editors
+.idea/
+.vscode/
+
+# os
+.DS_Store
+Thumbs.db
