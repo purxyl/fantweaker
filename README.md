@@ -40,7 +40,7 @@
 
 ## Screenshots
 
-<img width="320" alt="Screenshot 2026-02-18 162954 1" src="https://github.com/user-attachments/assets/767259f4-ca93-42be-81fa-efbd52f10ce9" /> <img width="320" alt="Screenshot 2026-02-18 163120 1" src="https://github.com/user-attachments/assets/364907d9-363e-464e-ae71-9b8f2b353882" /> <img width="320" alt="Screenshot 2026-02-18 163106 1" src="https://github.com/user-attachments/assets/9f4ff404-0812-40b0-8ebe-cd5945df90d4" />
+<img width="400" alt="Screenshot 2026-02-18 162954 1" src="https://github.com/user-attachments/assets/767259f4-ca93-42be-81fa-efbd52f10ce9" /> <img width="400" alt="Screenshot 2026-02-18 163120 1" src="https://github.com/user-attachments/assets/364907d9-363e-464e-ae71-9b8f2b353882" /> <img width="1550" alt="Screenshot 2026-02-18 163106 1" src="https://github.com/user-attachments/assets/9f4ff404-0812-40b0-8ebe-cd5945df90d4" />
 
 ## Report a bug
 
