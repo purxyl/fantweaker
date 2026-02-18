@@ -2,7 +2,7 @@
 	"manifest_version": 3,
   
 	"name": "FanTweaker",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Tweak your experience of wikis on Fandom.com and make it truly yours. Enhance readability, change colors and spacing, remove the header, rail, sidebar and more.",
 	"icons": {
 		"48": "icons/icon48.png",

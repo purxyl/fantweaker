@@ -1,7 +1,7 @@
 <p align="center">
   <img src="icon.png" alt="FanTweaker Logo">
 </p>
-<h1 align="center">FanTweaker v0.0.1</h1>
+<h1 align="center">FanTweaker v.1.0.2</h1>
 <p align="center">
   Tweak you experience of wikis on Fandom.com with fully customizable view areas, such as deleting the header, sidebar, or even the page rail. Making you the priority again.
 </p>
@@ -10,8 +10,6 @@
   •
   <a href="#contributing">Contribute 🤝</a>
 </p>
-
-
 
 ## Table of Contents
 
