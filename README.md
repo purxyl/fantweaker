@@ -8,8 +8,6 @@
 <p align="center">
   <a href="#installation">Get FanTweaker ✨</a>
   •
-  <a href="https://purxyl.github.io/fantweaker">Website 🏷️</a>
-  •
   <a href="#contributing">Contribute 🤝</a>
 </p>
 
@@ -23,7 +21,7 @@
 - [Screenshots](#screenshots)
 - [Report a bug](#report-a-bug)
 - [Contributing](#contributing)
-  - [Development](#prerequisites)
+  - [Development](#development)
 - [Attributions](#attributions)
 - [License](#license)
 
@@ -33,7 +31,7 @@
 > FanTweaker is only available for [Firefox](https://www.mozilla.org/en-US/firefox/) at the moment. I'm sorry for the inconvenience.
 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/fantweaker/"><img src="https://cdn.brandfetch.io/idJNWZniow/w/196/h/196/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1767621353823" alt="Firefox Logo" width="16"> Firefox Add-on</a><br>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/fantweaker/"><img src="https://cdn.brandfetch.io/idHB2sRZ53/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1704290516125" alt="Chrome Logo" width="16"> Chrome Add-on</a>
+<img src="https://cdn.brandfetch.io/idkFGcgVVT/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1764962669260" alt="Chromium Logo" width="16"> Chromium Add-on
 
 ## Roadmap
 
@@ -43,6 +41,8 @@
 - [ ] Add a reader mode that removes any unnecesary elements for non-contributors. (edit and search buttons, comments, etc.)
 
 ## Screenshots
+
+TBA
 
 ## Report a bug
 
