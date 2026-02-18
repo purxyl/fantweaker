@@ -10,46 +10,87 @@
         <link rel="stylesheet" href="styles/global.css">
     </head>
     <body>
-        <main>
-            <section id="mainPage">
-                <div class="header">
-                    <img src="./icons/banner.png" alt="FanTweaker's icon" class="logo">
-                    <div class="nav">
-                        <a href="" class="nav-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480.5-880t155 31.5q72.5 31.5 127 86t86 127Q880-563 880-480.5T848.5-325q-31.5 73-86 127.5t-127 86Q563-80 480.5-80T325-111.5ZM480-162q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
-                        </a>
-                        <button class="nav-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M183.5-183.5Q160-207 160-240t23.5-56.5Q207-320 240-320t56.5 23.5Q320-273 320-240t-23.5 56.5Q273-160 240-160t-56.5-23.5Zm240 0Q400-207 400-240t23.5-56.5Q447-320 480-320t56.5 23.5Q560-273 560-240t-23.5 56.5Q513-160 480-160t-56.5-23.5Zm240 0Q640-207 640-240t23.5-56.5Q687-320 720-320t56.5 23.5Q800-273 800-240t-23.5 56.5Q753-160 720-160t-56.5-23.5Zm-480-240Q160-447 160-480t23.5-56.5Q207-560 240-560t56.5 23.5Q320-513 320-480t-23.5 56.5Q273-400 240-400t-56.5-23.5Zm240 0Q400-447 400-480t23.5-56.5Q447-560 480-560t56.5 23.5Q560-513 560-480t-23.5 56.5Q513-400 480-400t-56.5-23.5Zm240 0Q640-447 640-480t23.5-56.5Q687-560 720-560t56.5 23.5Q800-513 800-480t-23.5 56.5Q753-400 720-400t-56.5-23.5Zm-480-240Q160-687 160-720t23.5-56.5Q207-800 240-800t56.5 23.5Q320-753 320-720t-23.5 56.5Q273-640 240-640t-56.5-23.5Zm240 0Q400-687 400-720t23.5-56.5Q447-800 480-800t56.5 23.5Q560-753 560-720t-23.5 56.5Q513-640 480-640t-56.5-23.5Zm240 0Q640-687 640-720t23.5-56.5Q687-800 720-800t56.5 23.5Q800-753 800-720t-23.5 56.5Q753-640 720-640t-56.5-23.5Z"/></svg>
-                        </button>
-                    </div>
+        <header>
+            <img src="./icons/icon48.png" alt="FanTweaker Icon" class="icon">
+        </header>
+        <section>
+            <div class="container">
+                <p class="container-label">Toggle the add-on</p>
+                <label class="toggle">
+                    <input type="checkbox" id="FT-enabled">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="container">
+                <button class="button aside-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-120v-170l527-526q12-12 27-18t30-6q16 0 30.5 6t25.5 18l56 56q12 11 18 25.5t6 30.5q0 15-6 30t-18 27L330-120H160Zm80-80h56l393-392-28-29-29-28-392 393v56Zm560-503-57-57 57 57Zm-139 82-29-28 57 57-28-29ZM560-120q74 0 137-37t63-103q0-36-19-62t-51-45l-59 59q23 10 36 22t13 26q0 23-36.5 41.5T560-200q-17 0-28.5 11.5T520-160q0 17 11.5 28.5T560-120ZM183-426l60-60q-20-8-31.5-16.5T200-520q0-12 18-24t76-37q88-38 117-69t29-70q0-55-44-87.5T280-840q-45 0-80.5 16T145-785q-11 13-9 29t15 26q13 11 29 9t27-13q14-14 31-20t42-6q41 0 60.5 12t19.5 28q0 14-17.5 25.5T262-654q-80 35-111 63.5T120-520q0 32 17 54.5t46 39.5Z"/></svg>
+                    Customize
+                </button>
+            </div>
+            <div class="container">
+                <a class="button" href="https://github.com/purxyl/fantweaker/issues/new">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg>
+                    Report a bug
+                </a>
+            </div>
+        </section>
+        <aside>
+            <button class="aside-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+            </button>
+            <h1 class="headline">Customizations</h1>
+            <div class="container">
+                <div class="container-info">
+                    <p class="container-label">Hide the header</p>
+                    <p class="container-description">Contains the search bar, login options and site logo.</p>
                 </div>
-                <div class="content">
-                    <label class="toggle">
-                        <input type="checkbox" id="FT-enabled">
-                        <span class="toggle-slider">enable</span>
-                    </label>
-                    <label class="toggle">
-                        <input type="checkbox" id="FT-hide_header">
-                        <span class="toggle-slider">hide header</span>
-                    </label>
-                    <label class="toggle">
-                        <input type="checkbox" id="FT-hide_sidebar">
-                        <span class="toggle-slider">hide sidebar</span>
-                    </label>
-                    <label class="toggle">
-                        <input type="checkbox" id="FT-hide_rail">
-                        <span class="toggle-slider">hide rail</span>
-                    </label>
-                    <label class="toggle">
-                        <input type="checkbox" id="FT-hide_footer">
-                        <span class="toggle-slider">hide footer</span>
-                    </label>
+                <label class="toggle">
+                    <input type="checkbox" id="FT-hide_header">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="container">
+                <div class="container-info">
+                    <p class="container-label">Hide the sidebar</p>
+                    <p class="container-description">Contains the most recent wikis the user has visited and promotional content.</p>
                 </div>
-            </section>
-            <aside id="settingsPage">
-                
-            </aside>
-        </main>
+                <label class="toggle">
+                    <input type="checkbox" id="FT-hide_sidebar">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="container">
+                <div class="container-info">
+                    <p class="container-label">Hide the rail</p>
+                    <p class="container-description">Contains the wikis discord widget, and promotional content.</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="FT-hide_rail">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="container">
+                <div class="container-info">
+                    <p class="container-label">Hide the footer</p>
+                    <p class="container-description">Contains the copyright information and links to the site's policies.</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="FT-hide_footer">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </aside>
+        <footer>
+            <p>
+                Made with &hearts; by 
+                <a href="https://github.com/purxyl">Purxyl</a>
+            </p>
+            <p>
+                Version: <span id="FT-version"></span>
+                —
+                <a href="https://github.com/purxyl/fantweaker/releases">Read the changelog</a>
+            </p>
+        </footer>
         <script src="./scripts/dist/interaction.js"></script>
     </body>
 </html>

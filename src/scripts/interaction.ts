@@ -1,5 +1,20 @@
+const aside = document.querySelector('aside');
+const asideToggle = document.querySelectorAll('.aside-toggle');
+
+asideToggle.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    aside?.classList.toggle('active');
+  });
+});
+
 // @ts-ignore
 const extensionApi = (globalThis as any).browser ?? chrome;
+
+const version = extensionApi.runtime.getManifest().version;
+const versionSpan = document.getElementById('FT-version');
+if (versionSpan) {
+  versionSpan.textContent = version;
+}
 
 const toggles = [
   ['enabled', 'FT-enabled'],
@@ -11,12 +26,20 @@ const toggles = [
   // Syntax: ['edit_name', 'popup_element_id']
 ]
 
+const defaultToggles: { [key: string]: boolean } = {
+  'enabled': false,
+  'hide_header': true,
+  'hide_sidebar': true,
+  'hide_footer': false,
+  'hide_rail': false
+};
+
 function restoreEdits() {
-  extensionApi.storage.local.get(toggles.map(toggle => toggle[1])).then((result: { [key: string]: any }) => {
+  extensionApi.storage.local.get(toggles.map(toggle => toggle[0])).then((result: { [key: string]: any }) => {
     toggles.forEach(toggle => {
       const toggleElement = document.getElementById(toggle[1]) as HTMLInputElement;
       if (toggleElement) {
-        toggleElement.checked = result[toggle[1]] ?? false;
+        toggleElement.checked = result[toggle[0]] ?? result[toggle[1]] ?? defaultToggles[toggle[0]] ?? false;
       }
     });
     
@@ -29,7 +52,7 @@ function saveEdits() {
   toggles.forEach(toggle => {
     const toggleElement = document.getElementById(toggle[1]) as HTMLInputElement;
     if (toggleElement) {
-      togglesToSave[toggle[1]] = toggleElement.checked;
+      togglesToSave[toggle[0]] = toggleElement.checked;
     }
   });
   
@@ -37,7 +60,6 @@ function saveEdits() {
 }
 
 function sendEdits() {
-  console.log('filtering edits');
   const activeToggles = toggles.map(toggle => {
     let toggleElement = document.getElementById(toggle[1]) as HTMLInputElement;
     if (toggleElement?.checked) {
@@ -45,7 +67,6 @@ function sendEdits() {
     };
   }).filter(toggle => toggle !== undefined);
   
-  console.log('sending edits');
   extensionApi.tabs.query({ active: true, currentWindow: true }).then((tabs: Array<{ id?: number }>) => {
     const activeTabId = tabs[0]?.id;
     if (activeTabId === undefined) return;
@@ -54,10 +75,8 @@ function sendEdits() {
   });
 }
 
-// Initialize: restore saved toggles on popup open
 restoreEdits();
 
-// Setup: save on each toggle change
 toggles.forEach(toggle => {
   const toggleElement = document.getElementById(toggle[1]) as HTMLInputElement;
   toggleElement?.addEventListener('change', () => {

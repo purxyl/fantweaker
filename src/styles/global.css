@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,8 @@
   list-style: none;
 
   box-sizing: border-box;
+  
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -13,75 +20,306 @@ html {
 }
 
 body {
-  width: 380px; height: 240px;
+  position: relative;
+  
+  width: 320px; height: fit-content;
+  overflow: hidden;
 }
 
 main {
+  position: relative;
   width: 100%; height: 100%;
-  background: #f3f6f9;
-}
-
-#mainPage {
-  width: 100%;
-  padding: 12px 12px 12px 16px;
+  background: var(--gray-1);
   
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 32px auto 36px;
-  gap: 32px;
+  overflow-x: hidden;
 }
 
-#mainPage .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
+:root {
+  --main-1: #17bedc;
+  --main-2: #11879c;
+  --gray-1: #f3f6f9;
+  --gray-2: #d5dadd;
+  --gray-3: #b0b3b6;
+  --gray-4: #545a5e;
+  --gray-5: #31383a;
 }
 
-#mainPage .header .logo {
-  height: 26px; width: fit-content;
-}
-
-#mainPage .header .nav {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 2px;
-}
-
-#mainPage .header .nav .nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 32px; height: 32px;
+header {
+  width: 100%; height: 64px;
+  padding: 0 16px;
   
-  background: none;
-  border: none;
-  border-radius: 4px;
-  
-  color: #001818;
-  opacity: 0.8;
-  
-  transition: all 0.06s ease-in-out;
-  cursor: pointer;
-  
-  &:hover { background: #00181820; opacity: 1; }
-  &:active { transform: scale(0.9); }
-}
-
-#mainPage .content {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 16px;
+  
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  
+  border-bottom: solid 1px var(--gray-2);
 }
 
-#mainPage .content .status {
+header img {
+  width: 32px; height: 32px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  padding: 16px;
+}
+
+section {
+  width: 100%; height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  padding: 16px;
+}
+
+section .container {
+  width: 100%; height: fit-content;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+section .container.dual {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+section .container .container-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-5);
+}
+
+section .container .toggle {
+  width: 56px; height: 28px;
+  
+  background: var(--gray-1);
+  border: solid 1px var(--gray-2);
+  border-radius: 4px;
+  
+  position: relative;
+  
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+section .container .toggle .toggle-slider {
+  width: 24px; height: 22px;
+  
+  background: var(--gray-2);
+  border-radius: 2px;
+  
+  position: absolute;
+  top: 2px; left: 2px;
+  
+  transition: all 0.1s ease-in-out;
+}
+
+section .container .toggle input[type="checkbox"] {
+  display: none;
+}
+
+section .container .toggle input[type="checkbox"]:checked + .toggle-slider {
+  left: 28px;
+  background: var(--main-1);
+}
+
+section .container .button {
+  width: 100%; height: 40px;
+  
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 1em;
-  color: #31383a;
+  font-size: 0.875rem;
+  color: var(--gray-5);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  background: var(--gray-1);
+  border: solid 1px var(--gray-2);
+  border-radius: 4px;
+  
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    background: var(--gray-2);
+  }
+  
+  &:active {
+    scale: 0.98;
+  }
+}
+
+section .container .button svg {
+  width: 20px;
+  height: 20px;
+}
+
+aside {
+  position: absolute;
+  bottom: -100%; left: 0;
+  width: 100%; height: 100%;
+  padding: 16px;
+  
+  background: var(--gray-1);
+  
+  transition: all 0.2s ease-in-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+  &.active {
+    bottom: 0;
+  }
+}
+
+aside .headline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--gray-5);
+  
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+aside .aside-toggle {
+  position: absolute;
+  top: 16px; right: 16px;
+  
+  width: 32px; height: 32px;
+  
+  background: var(--gray-1);
+  border: solid 1px var(--gray-2);
+  border-radius: 4px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  
+  transform: rotate(90deg);
+  
+  &:hover {
+    background: var(--gray-2);
+  }
+  
+  &:active {
+    scale: 0.95;
+  }
+}
+
+aside .container {
+  width: 100%; height: fit-content;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  
+  margin: 16px 0;
+}
+
+aside .container .container-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 4px;
+  max-width: 200px;
+}
+
+aside .container .container-info .container-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-5);
+}
+
+aside .container .container-info .container-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--gray-4);
+}
+
+aside .container .toggle {
+  width: 56px; height: 28px;
+  
+  background: var(--gray-1);
+  border: solid 1px var(--gray-2);
+  border-radius: 4px;
+  
+  position: relative;
+  
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+aside .container .toggle .toggle-slider {
+  width: 24px; height: 22px;
+  
+  background: var(--gray-2);
+  border-radius: 2px;
+  
+  position: absolute;
+  top: 2px; left: 2px;
+  
+  transition: all 0.1s ease-in-out;
+}
+
+aside .container .toggle input[type="checkbox"] {
+  display: none;
+}
+
+aside .container .toggle input[type="checkbox"]:checked + .toggle-slider {
+  left: 28px;
+  background: var(--main-1);
+}
+
+footer {
+  width: 100%; height: 64px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background: var(--gray-1);
+  border-top: solid 1px var(--gray-2);
+  
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--gray-4);
+}
+
+footer a {
+  color: var(--gray-4);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  
+  &:hover {
+    text-decoration-color: var(--gray-4);
+  }
 }

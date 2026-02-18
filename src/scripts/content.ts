@@ -1,8 +1,3 @@
-/**
- * Learn more about customizing these edits yourself at:
- * purxyl.github.io/fantweaker/docs#edits
- */
-
 const REMOVE = 'REMOVE';
 const EDIT = 'EDIT';
 
@@ -29,17 +24,15 @@ const edits = [
 ]
 
 async function applyEdits(toggles: string[]) { 
-  if (!toggles.includes('enabled')) {
-    resetEdits();
-    return;
-  };
+  const enabled = toggles.includes('enabled');
+  const activeToggles = enabled ? toggles : [];
   
   for (const edit of edits) {
     // @ts-ignore
     const element = document.querySelectorAll(edit[2]);
     if (!element || element.length == 0) continue;
     
-    if (!toggles.includes(edit[0] as string)) {
+    if (!activeToggles.includes(edit[0] as string)) {
       element.forEach(instance => {
         const htmlinstance = instance as HTMLElement;
         
@@ -68,14 +61,14 @@ function resetEdits() {
   window.location.reload();
 }
 
-extensionApi.storage.local.get(['FT-enabled', 'FT-hide_header', 'FT-hide_sidebar', 'FT-hide_footer', 'FT-hide_rail']).then((result: { [key: string]: any }) => {
+extensionApi.storage.local.get(['enabled', 'hide_header', 'hide_sidebar', 'hide_footer', 'hide_rail', 'FT-enabled', 'FT-hide_header', 'FT-hide_sidebar', 'FT-hide_footer', 'FT-hide_rail']).then((result: { [key: string]: any }) => {
   const activeToggles: string[] = [];
   
-  if (result['FT-enabled']) activeToggles.push('enabled');
-  if (result['FT-hide_header']) activeToggles.push('hide_header');
-  if (result['FT-hide_sidebar']) activeToggles.push('hide_sidebar');
-  if (result['FT-hide_footer']) activeToggles.push('hide_footer');
-  if (result['FT-hide_rail']) activeToggles.push('hide_rail');
+  if (result['enabled'] ?? result['FT-enabled']) activeToggles.push('enabled');
+  if (result['hide_header'] ?? result['FT-hide_header']) activeToggles.push('hide_header');
+  if (result['hide_sidebar'] ?? result['FT-hide_sidebar']) activeToggles.push('hide_sidebar');
+  if (result['hide_footer'] ?? result['FT-hide_footer']) activeToggles.push('hide_footer');
+  if (result['hide_rail'] ?? result['FT-hide_rail']) activeToggles.push('hide_rail');
   
   if (activeToggles.length > 0) {
     console.log('Restoring saved edits:', activeToggles);
