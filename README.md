@@ -88,6 +88,9 @@ Icon is a modified version of the [Fandom.com logo](https://www.fandom.com/) by 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+FanTweaker, and any contributors including the owner (Purxyl), are not affiliated or endorsed by Fandom.com.<br>
+Fandom.com is a registered trademark of Fandom Inc.
+
 
 
 
